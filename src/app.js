@@ -23,13 +23,16 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherDetail(response) {
+  console.log(response);
   let city = document.querySelector("#city");
   let temperature = document.querySelector("#temperature");
   let date = document.querySelector("#date");
+  let humidityPercentage = document.querySelector("#humidity");
 
   city.innerHTML = response.data.name;
   temperature.innerHTML = Math.round(response.data.main.temp);
   date.innerHTML = formatDate(response.data.dt * 1000);
+  humidityPercentage.innerHTML = response.data.main.humidity;
 }
 
 let city = "New York";

@@ -38,6 +38,7 @@ li {
 .weather-overview {
   margin-bottom: 15px;
 }
+
 .weather-temperature i {
   margin-left: 18px;
   font-size: 20px;
@@ -55,7 +56,12 @@ li {
   font-size: 14px;
 }
 
-.weather-description {
+.weather-detail {
   position: relative;
   left: 90px;
+}
+
+.weather-detail li strong {
+  color: #b36767;
+  font-weight: 400;
 }
