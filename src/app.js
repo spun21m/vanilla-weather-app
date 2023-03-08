@@ -28,12 +28,14 @@ function displayWeatherDetail(response) {
   let temperature = document.querySelector("#temperature");
   let date = document.querySelector("#date");
   let humidityPercentage = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#wind");
   let description = document.querySelector("#weather-description");
 
   city.innerHTML = response.data.name;
   temperature.innerHTML = Math.round(response.data.main.temp);
   date.innerHTML = formatDate(response.data.dt * 1000);
   humidityPercentage.innerHTML = response.data.main.humidity;
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
   description.innerHTML = `<em>${response.data.weather[0].description}</em>`;
 }
 
