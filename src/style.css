@@ -9,11 +9,10 @@ h1 {
   font-weight: bold;
 }
 
-h2,
+p,
 li {
   color: #9a9696;
   font-weight: 100;
-  font-size: 16px;
   line-height: 19px;
 }
 
