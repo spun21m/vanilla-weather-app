@@ -39,6 +39,9 @@ li {
   margin-bottom: 15px;
 }
 
+.weather-overview p #weather-description {
+  text-transform: capitalize;
+}
 .weather-temperature i {
   margin-left: 18px;
   font-size: 20px;

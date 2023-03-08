@@ -28,11 +28,13 @@ function displayWeatherDetail(response) {
   let temperature = document.querySelector("#temperature");
   let date = document.querySelector("#date");
   let humidityPercentage = document.querySelector("#humidity");
+  let description = document.querySelector("#weather-description");
 
   city.innerHTML = response.data.name;
   temperature.innerHTML = Math.round(response.data.main.temp);
   date.innerHTML = formatDate(response.data.dt * 1000);
   humidityPercentage.innerHTML = response.data.main.humidity;
+  description.innerHTML = `<em>${response.data.weather[0].description}</em>`;
 }
 
 let city = "New York";
