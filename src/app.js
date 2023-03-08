@@ -30,6 +30,7 @@ function displayWeatherDetail(response) {
   let humidityPercentage = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind");
   let description = document.querySelector("#weather-description");
+  let weatherIcon = document.querySelector("#icon");
 
   city.innerHTML = response.data.name;
   temperature.innerHTML = Math.round(response.data.main.temp);
@@ -37,6 +38,11 @@ function displayWeatherDetail(response) {
   humidityPercentage.innerHTML = response.data.main.humidity;
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   description.innerHTML = `<em>${response.data.weather[0].description}</em>`;
+  weatherIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let city = "New York";
