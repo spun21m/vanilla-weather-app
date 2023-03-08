@@ -22,8 +22,8 @@ li {
 }
 
 .app-container-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 50px auto;
 }
 
 .app-container {
@@ -32,6 +32,23 @@ li {
   background: #d3ddd9;
   border-radius: 5px;
   box-shadow: 10px 10px 20px rgba(211, 221, 217, 0.2);
+}
+
+/* .app-container .search-form {
+  margin-bottom: 20px;
+} */
+
+.app-container .search-box {
+  border: none;
+  color: rgba(138, 133, 135, 0.8);
+  padding: 10px 20px;
+}
+
+.app-container .btn {
+  background: #6d9dae;
+  border: none;
+  font-weight: 600;
+  padding: 10px 0;
 }
 
 .weather-overview {
@@ -76,6 +93,6 @@ li {
 }
 
 .weather-detail li strong {
-  color: #4e55a1;
+  color: #284d5a;
   font-weight: 400;
 }

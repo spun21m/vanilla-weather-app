@@ -45,7 +45,19 @@ function displayWeatherDetail(response) {
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
-let city = "New York";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-axios.get(apiUrl).then(displayWeatherDetail);
+function search(city) {
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayWeatherDetail);
+}
+
+function submitForm(event) {
+  event.preventDefault();
+  let inputCity = document.querySelector("#search-city").value;
+  search(inputCity);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitForm);
+
+search("new York");
