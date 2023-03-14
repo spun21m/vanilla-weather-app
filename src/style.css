@@ -34,10 +34,6 @@ li {
   box-shadow: 10px 10px 20px rgba(211, 221, 217, 0.2);
 }
 
-/* .app-container .search-form {
-  margin-bottom: 20px;
-} */
-
 .app-container .search-box {
   border: none;
   color: rgba(138, 133, 135, 0.8);
@@ -68,7 +64,7 @@ li {
 }
 
 .weather-temperature strong {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 400;
   line-height: 1;
 }
@@ -82,9 +78,19 @@ li {
 
 .weather-temperature .units {
   position: relative;
-  top: -35px;
+  top: -40px;
   left: 15px;
   font-size: 14px;
+}
+
+.weather-temperature a {
+  text-decoration: none;
+  color: rgba(138, 133, 135, 0.8);
+}
+
+.weather-temperature .active-temperature {
+  color: black;
+  cursor: auto;
 }
 
 .weather-detail {
