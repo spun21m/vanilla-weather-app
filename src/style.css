@@ -62,7 +62,7 @@ img {
 .weather-temperature img {
   height: 64px;
   width: 64px;
-  margin: 0 18px;
+  margin: 10px 22px;
   position: relative;
   top: -15px;
 }
@@ -76,25 +76,15 @@ img {
 .weather-temperature #temperature {
   position: relative;
   top: -25px;
-  left: 16px;
+  left: 29px;
   font-weight: bold;
 }
 
 .weather-temperature .units {
   position: relative;
   top: -40px;
-  left: 15px;
-  font-size: 14px;
-}
-
-.weather-temperature a {
-  text-decoration: none;
-  color: rgba(138, 133, 135, 0.8);
-}
-
-.weather-temperature .active-temperature {
-  color: black;
-  cursor: auto;
+  left: 28px;
+  font-size: 15px;
 }
 
 .weather-detail {
@@ -105,6 +95,7 @@ img {
 .weather-detail li strong {
   color: #284d5a;
   font-weight: 400;
+  line-height: 1.4;
 }
 
 .weather-forecast {
@@ -117,6 +108,8 @@ img {
 }
 
 .forecast-temperature {
+  color: #284d5a;
+  font-weight: 600;
   font-size: 13px;
 }
 

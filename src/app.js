@@ -65,7 +65,8 @@ function displayWeatherForecast(response) {
 }
 
 function displayForecastByCoord(coordinates) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
+  let units = "imperial";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherForecast);
 }
 
@@ -79,8 +80,7 @@ function displayWeatherDetail(response) {
   let weatherIcon = document.querySelector("#icon");
 
   city.innerHTML = response.data.city;
-  celciusTemp = Math.round(response.data.temperature.current);
-  temperature.innerHTML = celciusTemp;
+  temperature.innerHTML = Math.round(response.data.temperature.current);
   date.innerHTML = formatDate(response.data.time * 1000);
   humidityPercentage.innerHTML = response.data.temperature.humidity;
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
@@ -95,7 +95,7 @@ function displayWeatherDetail(response) {
 }
 
 function search(city) {
-  let units = "metric";
+  let units = "imperial";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherDetail);
 }
@@ -109,32 +109,7 @@ function submitForm(event) {
   search(inputCity);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#temperature");
-  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
-  currentTemperature.innerHTML = Math.round(fahrenheitTemp);
-  event.target.classList.add("active-temperature");
-  celciusIconLink.classList.remove("active-temperature");
-}
-
-function displayCelciusTemperature(event) {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = Math.round(celciusTemp);
-  event.target.classList.add("active-temperature");
-  fahrenheitIconLink.classList.remove("active-temperature");
-}
-
-let celciusTemp = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitForm);
-
-let fahrenheitIconLink = document.querySelector("#fahrenheit-degree");
-fahrenheitIconLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celciusIconLink = document.querySelector("#celcius-degree");
-celciusIconLink.addEventListener("click", displayCelciusTemperature);
 
 search("new York");
