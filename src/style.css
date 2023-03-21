@@ -21,6 +21,11 @@ li {
   padding: 0;
 }
 
+img {
+  display: block;
+  margin: 0 auto;
+}
+
 .app-container-wrapper {
   max-width: 800px;
   margin: 50px auto;
@@ -55,7 +60,6 @@ li {
   text-transform: capitalize;
 }
 .weather-temperature img {
-  display: block;
   height: 64px;
   width: 64px;
   margin: 0 18px;
@@ -101,4 +105,21 @@ li {
 .weather-detail li strong {
   color: #284d5a;
   font-weight: 400;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forecast-day {
+  opacity: 0.5;
+}
+
+.forecast-temperature {
+  font-size: 13px;
+}
+
+.min-temperature {
+  opacity: 0.5;
 }
