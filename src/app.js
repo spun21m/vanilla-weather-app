@@ -21,6 +21,32 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayWeatherForecast() {
+  let weatherForecast = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecast = `<div class="row">`;
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      `
+        <div class="col-2">
+          <span class="forecast-day">${day}</span>
+          <img
+            src="https://openweathermap.org/img/wn/01n@2x.png"
+            alt=""
+            width="36"
+          />
+          <span class="forecast-temperature">
+            <span class="max-temperature">11°</span>
+            <span class="min-temperature">3°</span>
+          </span>
+        </div>
+      `;
+  });
+  forecast = forecast + `</div>`;
+  weatherForecast.innerHTML = forecast;
+}
+
 function displayWeatherDetail(response) {
   let city = document.querySelector("#city");
   let temperature = document.querySelector("#temperature");
@@ -42,6 +68,8 @@ function displayWeatherDetail(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
+
+  displayWeatherForecast();
 }
 
 function search(city) {
