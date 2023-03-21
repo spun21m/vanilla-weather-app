@@ -41,8 +41,10 @@ function displayWeatherForecast(response) {
         <div class="col-2">
           <span class="forecast-day">${getDay(day.time)}</span>
           <img
-            src="https://openweathermap.org/img/wn/01n@2x.png"
-            alt=""
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              day.condition.icon
+            }.png"
+            alt="${day.condition.description}"
             width="36"
           />
           <span class="forecast-temperature">
