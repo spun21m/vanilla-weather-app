@@ -30,6 +30,7 @@ function getDay(timestamp) {
 }
 
 function displayWeatherForecast(response) {
+  console.log(response);
   let weatherForecast = document.querySelector("#forecast");
   let dailyForecast = response.data.daily;
   let forecastHtml = `<div class="row">`;
@@ -48,8 +49,12 @@ function displayWeatherForecast(response) {
             width="36"
           />
           <span class="forecast-temperature">
-            <span class="max-temperature">11°</span>
-            <span class="min-temperature">3°</span>
+            <span class="max-temperature">${Math.round(
+              day.temperature.maximum
+            )}°</span>
+            <span class="min-temperature">${Math.round(
+              day.temperature.minimum
+            )}°</span>
           </span>
         </div>
       `;
@@ -98,6 +103,9 @@ function search(city) {
 function submitForm(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#search-city").value;
+  if (inputCity == "") {
+    inputCity = "New York";
+  }
   search(inputCity);
 }
 
